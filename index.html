@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curo — Your Money, Understood.</title>
+    <meta name="description" content="Curo is an AI-powered personal finance assistant that watches your money so you don't have to. Morning briefings, smart bill tracking, anomaly detection, and natural language queries — all with bank-grade privacy.">
+    <meta name="keywords" content="personal finance, AI finance, money management, bill tracking, budgeting app, UK fintech">
+    <meta name="author" content="Bamboo Futures Ltd">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dac-uk.github.io/curo-landing/">
+    <meta property="og:title" content="Curo — Your Money, Understood.">
+    <meta property="og:description" content="AI-powered personal finance assistant. Morning briefings, smart bills, anomaly detection. Your money, finally understood.">
+    <meta property="og:image" content="https://dac-uk.github.io/curo-landing/assets/og-image.png">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Curo — Your Money, Understood.">
+    <meta name="twitter:description" content="AI-powered personal finance assistant. Morning briefings, smart bills, anomaly detection.">
+    <meta name="twitter:image" content="https://dac-uk.github.io/curo-landing/assets/og-image.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Curo",
+        "operatingSystem": "iOS",
+        "applicationCategory": "FinanceApplication",
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "GBP",
+                "name": "Free"
+            },
+            {
+                "@type": "Offer",
+                "price": "4.99",
+                "priceCurrency": "GBP",
+                "name": "Pro"
+            }
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "Bamboo Futures Ltd",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "London",
+                "addressCountry": "GB"
+            }
+        },
+        "description": "AI-powered personal finance assistant with morning briefings, smart bill tracking, and anomaly detection."
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --gold: #D4A84B;
+            --gold-dim: rgba(212, 168, 75, 0.15);
+            --gold-glow: rgba(212, 168, 75, 0.3);
+            --bg: #0A0A0B;
+            --bg-card: #111113;
+            --bg-card-hover: #18181B;
+            --text: #FAFAFA;
+            --text-dim: #A1A1AA;
+            --text-muted: #71717A;
+            --border: #27272A;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 1.5rem;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-logo span {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--gold);
+            color: #0A0A0B;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1.5rem 4rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        .hero-owl {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            color: var(--text-dim);
+            max-width: 540px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: var(--gold);
+            color: #0A0A0B;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: transparent;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-spots {
+            margin-top: 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-spots strong {
+            color: var(--gold);
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 5rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.125rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* ── FEATURES ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            transition: all 0.25s;
+        }
+
+        .feature-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--gold-dim);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9375rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* ── SOCIAL PROOF ── */
+        .social-proof {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            max-width: 100%;
+        }
+
+        .social-proof .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* ── PRICING ── */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 700px;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--gold);
+        }
+
+        .price-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            background: var(--gold);
+            color: #0A0A0B;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .price-tier {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-amount {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-amount span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .price-desc {
+            color: var(--text-dim);
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+        }
+
+        .price-features li {
+            font-size: 0.9375rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        /* ── WAITLIST ── */
+        .waitlist {
+            text-align: center;
+            padding: 6rem 1.5rem;
+            max-width: 100%;
+        }
+
+        .waitlist-form {
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+
+        .waitlist-form input[type="email"] {
+            flex: 1;
+            padding: 0.875rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-right: none;
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .waitlist-form input[type="email"]::placeholder {
+            color: var(--text-muted);
+        }
+
+        .waitlist-form input[type="email"]:focus {
+            border-color: var(--gold);
+        }
+
+        .waitlist-form button {
+            padding: 0.875rem 1.5rem;
+            background: var(--gold);
+            color: #0A0A0B;
+            border: 1px solid var(--gold);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+
+        .waitlist-form button:hover {
+            opacity: 0.9;
+        }
+
+        .waitlist-form button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-note {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+        }
+
+        .form-success {
+            display: none;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .form-success.visible {
+            display: block;
+        }
+
+        /* ── APP STORE ── */
+        .app-store-section {
+            text-align: center;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.9375rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .app-store-badge:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (min-width: 640px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            nav {
+                padding: 1rem 3rem;
+            }
+
+            section {
+                padding: 6rem 3rem;
+            }
+        }
+
+        /* ── ANIMATIONS ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" fill="#D4A84B"/>
+            <circle cx="12" cy="14" r="3" fill="#0A0A0B"/>
+            <circle cx="20" cy="14" r="3" fill="#0A0A0B"/>
+            <circle cx="12" cy="13.5" r="1.5" fill="#FAFAFA"/>
+            <circle cx="20" cy="13.5" r="1.5" fill="#FAFAFA"/>
+            <path d="M16 10L13 6h6l-3 4z" fill="#0A0A0B"/>
+            <path d="M14 19h4l-2 3-2-3z" fill="#0A0A0B"/>
+            <path d="M8 12c-2-1-3-3-2-5" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 12c2-1 3-3 2-5" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>curo</span>
+    </a>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <svg class="hero-owl" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="25" width="100" height="85" rx="0" fill="#18181B" stroke="#D4A84B" stroke-width="2"/>
+        <rect x="25" y="15" width="70" height="20" fill="#D4A84B"/>
+        <path d="M35 15L45 2h10L45 15H35z" fill="#D4A84B"/>
+        <path d="M85 15L75 2H65l10 13h10z" fill="#D4A84B"/>
+        <circle cx="42" cy="55" r="14" fill="#27272A" stroke="#D4A84B" stroke-width="2"/>
+        <circle cx="78" cy="55" r="14" fill="#27272A" stroke="#D4A84B" stroke-width="2"/>
+        <circle cx="42" cy="53" r="6" fill="#D4A84B"/>
+        <circle cx="78" cy="53" r="6" fill="#D4A84B"/>
+        <circle cx="44" cy="51" r="2.5" fill="#FAFAFA"/>
+        <circle cx="80" cy="51" r="2.5" fill="#FAFAFA"/>
+        <path d="M55 65h10l-5 8-5-8z" fill="#D4A84B"/>
+        <rect x="35" y="82" width="50" height="3" rx="0" fill="#27272A"/>
+        <rect x="40" y="90" width="40" height="3" rx="0" fill="#27272A"/>
+        <rect x="45" y="98" width="30" height="3" rx="0" fill="#27272A"/>
+    </svg>
+
+    <h1>Your money, <span class="gold">understood.</span></h1>
+    <p>Curo is an AI-powered finance assistant that watches your money so you don't have to. Smart briefings, anomaly detection, and natural conversation — all private by design.</p>
+
+    <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">Get Early Access →</a>
+        <a href="#features" class="btn-secondary">See Features</a>
+    </div>
+
+    <p class="hero-spots">🔥 <strong>47 of 200</strong> TestFlight spots remaining</p>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">Everything your bank app should do, but doesn't.</h2>
+    <p class="section-desc">Curo connects to your accounts and turns raw transactions into clarity. No spreadsheets. No guessing.</p>
+
+    <div class="features-grid">
+        <div class="feature-card fade-in">
+            <div class="feature-icon">☀️</div>
+            <h3>Morning Briefing</h3>
+            <p>Wake up to a concise summary of yesterday's spending, upcoming bills, and anything unusual. Like a financial newspaper, written just for you.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">📋</div>
+            <h3>Smart Bills</h3>
+            <p>Curo detects recurring payments, tracks price changes, and warns you before bills hit. Never be surprised by a subscription again.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">🔍</div>
+            <h3>Anomaly Detection</h3>
+            <p>Unusual charge at 3am? Spending spike you didn't expect? Curo flags it instantly, so you can act before it's a problem.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">💬</div>
+            <h3>Ask Curo</h3>
+            <p>"How much did I spend on food this month?" — just ask. Natural language queries across all your accounts, answered in seconds.</p>
+        </div>
+        <div class="feature-card fade-in">
+            <div class="feature-icon">🔒</div>
+            <h3>Bank-Grade Privacy</h3>
+            <p>Your data is encrypted end-to-end and never sold. Curo is built on Open Banking standards with read-only access. We can see your data — but nobody else can.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+    <p class="section-label">Beta</p>
+    <h2 class="section-title">Built with early users who care about their money.</h2>
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">200</div>
+            <div class="stat-label">TestFlight spots</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">£0</div>
+            <div class="stat-label">During beta</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">v1.0</div>
+            <div class="stat-label">Spring 2026</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+    <p class="section-label">Pricing</p>
+    <h2 class="section-title">Simple, honest pricing.</h2>
+    <p class="section-desc">Start free. Upgrade when Curo earns it.</p>
+
+    <div class="pricing-grid">
+        <div class="price-card">
+            <p class="price-tier">Free</p>
+            <p class="price-amount">£0 <span>/month</span></p>
+            <p class="price-desc">Perfect for getting started.</p>
+            <ul class="price-features">
+                <li>1 connected account</li>
+                <li>Morning Briefing</li>
+                <li>Basic bill tracking</li>
+                <li>7-day transaction history</li>
+            </ul>
+        </div>
+        <div class="price-card featured">
+            <p class="price-tier">Pro</p>
+            <p class="price-amount">£4.99 <span>/month</span></p>
+            <p class="price-desc">For people serious about their money.</p>
+            <ul class="price-features">
+                <li>Unlimited accounts</li>
+                <li>Anomaly detection</li>
+                <li>Ask Curo (natural language)</li>
+                <li>Full transaction history</li>
+                <li>Smart bill insights</li>
+                <li>Priority support</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- WAITLIST -->
+<section id="waitlist" class="waitlist">
+    <p class="section-label">Early Access</p>
+    <h2 class="section-title">Get on the list.</h2>
+    <p class="section-desc" style="margin: 0 auto 2rem;">Be the first to try Curo. Beta testers get Pro free for 3 months.</p>
+
+    <form class="waitlist-form" id="waitlist-form" action="https://formspree.io/f/xpwzgkjd" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button type="submit">Join Waitlist</button>
+    </form>
+    <p class="form-note">No spam. Unsubscribe anytime.</p>
+    <p class="form-success" id="form-success">You're on the list! We'll be in touch soon. 🦉</p>
+</section>
+
+<!-- APP STORE -->
+<section class="app-store-section">
+    <a href="#" class="app-store-badge">
+        📱 Coming soon to the App Store
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Support</a>
+            <a href="mailto:hello@bamboofutures.co.uk">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 Bamboo Futures Ltd · London, UK</p>
+    </div>
+</footer>
+
+<script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Form handling
+    const form = document.getElementById('waitlist-form');
+    const success = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Joining...';
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                form.style.display = 'none';
+                document.querySelector('.form-note').style.display = 'none';
+                success.classList.add('visible');
+            } else {
+                btn.textContent = 'Try Again';
+                btn.disabled = false;
+            }
+        } catch {
+            btn.textContent = 'Try Again';
+            btn.disabled = false;
+        }
+    });
+</script>
+
+</body>
+</html>
