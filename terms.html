@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Curo</title>
+    <meta name="description" content="Curo Terms of Service — the terms that govern your use of the Curo app by Bamboo Futures Ltd.">
+    <meta name="author" content="Bamboo Futures Ltd">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dac-uk.github.io/curo-landing/terms.html">
+    <meta property="og:title" content="Terms of Service — Curo">
+    <meta property="og:description" content="The terms and conditions that govern your use of the Curo personal finance assistant.">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --gold: #D4A84B;
+            --gold-dim: rgba(212, 168, 75, 0.15);
+            --gold-glow: rgba(212, 168, 75, 0.3);
+            --bg: #0A0A0B;
+            --bg-card: #111113;
+            --bg-card-hover: #18181B;
+            --text: #FAFAFA;
+            --text-dim: #A1A1AA;
+            --text-muted: #71717A;
+            --border: #27272A;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 1.5rem;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-logo span {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--gold);
+            color: #0A0A0B;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* ── PAGE CONTENT ── */
+        .page-header {
+            padding: 8rem 1.5rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .meta {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .page-header .meta strong {
+            color: var(--text-dim);
+        }
+
+        /* ── LEGAL CONTENT ── */
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 6rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .legal-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .legal-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .legal-content p {
+            font-size: 0.9375rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .legal-content ul {
+            list-style: none;
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
+
+        .legal-content ul li {
+            font-size: 0.9375rem;
+            color: var(--text-dim);
+            padding: 0.375rem 0 0.375rem 1.5rem;
+            position: relative;
+            line-height: 1.65;
+        }
+
+        .legal-content ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .legal-content a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--gold);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .warning-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid #ef4444;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a.active {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        @media (min-width: 900px) {
+            nav {
+                padding: 1rem 3rem;
+            }
+
+            .page-header {
+                padding: 8rem 3rem 3rem;
+            }
+
+            .legal-content {
+                padding: 3rem 3rem 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" fill="#D4A84B"/>
+            <circle cx="12" cy="14" r="3" fill="#0A0A0B"/>
+            <circle cx="20" cy="14" r="3" fill="#0A0A0B"/>
+            <circle cx="12" cy="13.5" r="1.5" fill="#FAFAFA"/>
+            <circle cx="20" cy="13.5" r="1.5" fill="#FAFAFA"/>
+            <path d="M16 10L13 6h6l-3 4z" fill="#0A0A0B"/>
+            <path d="M14 19h4l-2 3-2-3z" fill="#0A0A0B"/>
+            <path d="M8 12c-2-1-3-3-2-5" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 12c2-1 3-3 2-5" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>curo</span>
+    </a>
+    <a href="index.html#waitlist" class="nav-cta">Join Waitlist</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <p class="page-label">Legal</p>
+    <h1>Terms of Service</h1>
+    <p class="meta">
+        <strong>Bamboo Futures Ltd</strong> &middot; Last updated: 29 April 2026 &middot; Effective: 29 April 2026
+    </p>
+</div>
+
+<!-- LEGAL CONTENT -->
+<div class="legal-content">
+
+    <div class="info-box">
+        <p>Please read these Terms of Service carefully before using Curo. By creating an account or using the Curo application, you agree to be bound by these terms. If you do not agree, you must not use Curo.</p>
+    </div>
+
+    <h2>1. About Us and These Terms</h2>
+    <p>Curo is an AI-powered personal finance assistant developed and operated by <strong>Bamboo Futures Ltd</strong>, a company incorporated in England and Wales ("we", "us", "our", "Bamboo Futures").</p>
+    <p>These Terms of Service ("Terms") govern your use of the Curo iOS application and any associated website or services (collectively, the "Service"). They form a legally binding agreement between you and Bamboo Futures Ltd.</p>
+    <p>Our contact email is <a href="mailto:hello@bamboofutures.co.uk">hello@bamboofutures.co.uk</a>.</p>
+
+    <h2>2. Eligibility</h2>
+    <p>To use Curo you must:</p>
+    <ul>
+        <li>Be a resident of the United Kingdom</li>
+        <li>Be aged 18 or over</li>
+        <li>Have the legal capacity to enter into a binding contract</li>
+        <li>Have a valid UK bank account</li>
+        <li>Not be prohibited from using the service under applicable law</li>
+    </ul>
+    <p>Curo is not available to users outside the United Kingdom. By using the Service, you confirm that you meet these eligibility requirements.</p>
+
+    <h2>3. Service Description</h2>
+    <p>Curo is an AI-powered personal finance assistant that connects to your bank accounts via Open Banking and provides:</p>
+    <ul>
+        <li>Automated morning briefings summarising your recent financial activity</li>
+        <li>Smart bill and subscription tracking and alerts</li>
+        <li>Anomaly detection for unusual transactions or spending patterns</li>
+        <li>Natural language queries about your finances ("Ask Curo")</li>
+        <li>Transaction categorisation and insights</li>
+    </ul>
+    <p>The Service is currently available in the United Kingdom only, via the iOS App Store.</p>
+
+    <h2>4. Account Registration</h2>
+    <p>To use Curo you must create an account using a valid email address and a password. You are responsible for:</p>
+    <ul>
+        <li>Keeping your login credentials secure and confidential</li>
+        <li>All activity that occurs under your account</li>
+        <li>Notifying us immediately if you suspect unauthorised access to your account</li>
+        <li>Ensuring the information you provide is accurate and up to date</li>
+    </ul>
+    <p>You may not share your account with any other person or create multiple accounts for the same person.</p>
+
+    <h2>5. Open Banking Connections</h2>
+    <p>Curo connects to your bank accounts using Open Banking via FCA-regulated Account Information Service Providers (AISPs). By authorising a bank connection within Curo, you:</p>
+    <ul>
+        <li>Consent to Curo accessing your transaction and account data in read-only mode</li>
+        <li>Acknowledge that Curo cannot initiate payments, transfer funds, or modify your accounts in any way</li>
+        <li>Understand that bank connections must be re-authorised periodically (typically every 90 days) as required by Open Banking regulations</li>
+        <li>Can revoke any bank connection at any time within the Curo app or directly with your bank</li>
+    </ul>
+    <p>Curo acts as an aggregator of financial information only. We are not a bank, payment institution, or financial services firm.</p>
+
+    <h2>6. Subscriptions and Billing</h2>
+
+    <h3>6.1 Free tier</h3>
+    <p>The Free tier of Curo is available at no charge and includes:</p>
+    <ul>
+        <li>Connection of one bank account</li>
+        <li>Daily morning briefing</li>
+        <li>Basic bill tracking</li>
+        <li>7 days of transaction history</li>
+    </ul>
+
+    <h3>6.2 Curo Pro</h3>
+    <p>Curo Pro is a paid subscription available at <strong>£4.99 per month</strong>, providing access to:</p>
+    <ul>
+        <li>Unlimited connected bank accounts</li>
+        <li>Anomaly detection and smart alerts</li>
+        <li>Ask Curo natural language queries</li>
+        <li>Full transaction history</li>
+        <li>Smart bill insights and price change tracking</li>
+        <li>Priority support</li>
+    </ul>
+
+    <h3>6.3 Billing and Apple App Store</h3>
+    <p>Curo Pro subscriptions are purchased and managed through the Apple App Store. By subscribing to Curo Pro:</p>
+    <ul>
+        <li>Your subscription will automatically renew each month unless cancelled at least 24 hours before the end of the current period</li>
+        <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+        <li>You can manage and cancel your subscription in your Apple ID account settings at any time</li>
+        <li>Apple's standard refund and cancellation policies apply</li>
+    </ul>
+    <p>Bamboo Futures Ltd does not directly handle payment card data for Pro subscriptions — all billing is managed by Apple.</p>
+
+    <h3>6.4 Price changes</h3>
+    <p>We reserve the right to change the price of Curo Pro. We will give you at least 30 days' notice of any price increase. Continued use of Curo Pro after the new price takes effect constitutes acceptance of the new price.</p>
+
+    <h2>7. Important Disclaimer — Not Financial Advice</h2>
+
+    <div class="warning-box">
+        <p><strong>Curo is an information and analysis tool, not a financial advisor.</strong> Nothing within the Curo application constitutes financial advice, investment advice, tax advice, or any other form of regulated financial guidance.</p>
+    </div>
+
+    <p>Specifically:</p>
+    <ul>
+        <li>Curo's categorisations, insights, briefings, and suggestions are automated outputs based on your transaction data and should not be relied upon as professional financial guidance</li>
+        <li>You should always seek independent, qualified financial advice before making significant financial decisions</li>
+        <li>Past transaction patterns are not indicative of future financial outcomes</li>
+        <li>We are not regulated by the Financial Conduct Authority (FCA) to provide financial advice</li>
+    </ul>
+
+    <h2>8. Acceptable Use</h2>
+    <p>You agree to use Curo only for lawful purposes and in accordance with these Terms. You must not:</p>
+    <ul>
+        <li>Use the Service for any fraudulent, unlawful, or abusive purpose</li>
+        <li>Attempt to gain unauthorised access to the Service, our systems, or other users' accounts</li>
+        <li>Reverse-engineer, decompile, or disassemble any part of the Curo application</li>
+        <li>Use automated tools to scrape, copy, or extract data from the Service</li>
+        <li>Misrepresent your identity or eligibility</li>
+        <li>Share access to your account with third parties</li>
+        <li>Use the Service in any way that could damage, disable, or impair our systems</li>
+    </ul>
+
+    <h2>9. Intellectual Property</h2>
+    <p>All intellectual property rights in the Curo application, website, branding, and content (including but not limited to software, design, text, and graphics) belong to Bamboo Futures Ltd or our licensors. Nothing in these Terms grants you any rights in that intellectual property other than the right to use the Service in accordance with these Terms.</p>
+
+    <h2>10. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law:</p>
+    <ul>
+        <li>Curo is provided "as is" and "as available" without warranties of any kind, express or implied</li>
+        <li>We do not warrant that the Service will be uninterrupted, error-free, or that data will always be accurate or up to date</li>
+        <li>We are not liable for any financial decisions you make based on information provided by Curo</li>
+        <li>Our aggregate liability to you for any claim arising from or related to these Terms or the Service shall not exceed the total amount you paid to us in the 12 months preceding the claim</li>
+        <li>We shall not be liable for any indirect, incidental, special, consequential, or punitive damages</li>
+    </ul>
+    <p>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded by law.</p>
+
+    <h2>11. Service Availability and Changes</h2>
+    <p>We aim to provide a reliable service but we do not guarantee continuous, uninterrupted availability of Curo. We reserve the right to:</p>
+    <ul>
+        <li>Modify, suspend, or discontinue any feature of the Service at any time</li>
+        <li>Perform maintenance that may temporarily interrupt availability</li>
+        <li>Change these Terms at any time, with notice to you (see Section 14)</li>
+    </ul>
+    <p>We will provide reasonable advance notice of any significant changes or discontinuation of the Service where possible.</p>
+
+    <h2>12. Termination</h2>
+
+    <h3>12.1 By you</h3>
+    <p>You may terminate your Curo account at any time by deleting your account within the app settings. If you have an active Curo Pro subscription, you should cancel it via the App Store before deleting your account. Deletion of your account does not automatically cancel your App Store subscription.</p>
+
+    <h3>12.2 By us</h3>
+    <p>We reserve the right to suspend or terminate your account if you breach these Terms, engage in fraudulent activity, or if we are required to do so by law. We will notify you where possible before taking such action.</p>
+
+    <h3>12.3 Effect of termination</h3>
+    <p>On termination, your right to use the Service ends immediately. We will delete your personal data in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h2>13. Third-Party Services</h2>
+    <p>Curo integrates with third-party services including Open Banking providers and cloud infrastructure. Your use of those services is governed by their respective terms and privacy policies. We are not responsible for the actions or omissions of third-party service providers, except to the extent required by applicable law.</p>
+
+    <h2>14. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. Where we make material changes, we will notify you via the app or by email at least 14 days before the changes take effect. If you do not agree to the updated Terms, you must stop using the Service before the changes take effect.</p>
+
+    <h2>15. Governing Law and Disputes</h2>
+    <p>These Terms are governed by the laws of England and Wales. Any disputes arising from or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+    <p>If you have a complaint about the Service, please contact us first at <a href="mailto:hello@bamboofutures.co.uk">hello@bamboofutures.co.uk</a> and we will do our best to resolve it promptly.</p>
+
+    <h2>16. Contact</h2>
+    <p>If you have questions about these Terms, please contact us:</p>
+    <p>
+        <strong>Bamboo Futures Ltd</strong><br>
+        Email: <a href="mailto:hello@bamboofutures.co.uk">hello@bamboofutures.co.uk</a>
+    </p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html" class="active">Terms of Service</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:hello@bamboofutures.co.uk">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 Bamboo Futures Ltd · London, UK</p>
+    </div>
+</footer>
+
+</body>
+</html>

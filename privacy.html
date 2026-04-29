@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Curo</title>
+    <meta name="description" content="Curo Privacy Policy — how Bamboo Futures Ltd collects, uses, and protects your data.">
+    <meta name="author" content="Bamboo Futures Ltd">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dac-uk.github.io/curo-landing/privacy.html">
+    <meta property="og:title" content="Privacy Policy — Curo">
+    <meta property="og:description" content="How Bamboo Futures Ltd collects, uses, and protects your personal data when you use Curo.">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --gold: #D4A84B;
+            --gold-dim: rgba(212, 168, 75, 0.15);
+            --gold-glow: rgba(212, 168, 75, 0.3);
+            --bg: #0A0A0B;
+            --bg-card: #111113;
+            --bg-card-hover: #18181B;
+            --text: #FAFAFA;
+            --text-dim: #A1A1AA;
+            --text-muted: #71717A;
+            --border: #27272A;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 1.5rem;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-logo span {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--gold);
+            color: #0A0A0B;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* ── PAGE CONTENT ── */
+        .page-header {
+            padding: 8rem 1.5rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .meta {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .page-header .meta strong {
+            color: var(--text-dim);
+        }
+
+        /* ── LEGAL CONTENT ── */
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 6rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .legal-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .legal-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .legal-content p {
+            font-size: 0.9375rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .legal-content ul {
+            list-style: none;
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
+
+        .legal-content ul li {
+            font-size: 0.9375rem;
+            color: var(--text-dim);
+            padding: 0.375rem 0 0.375rem 1.5rem;
+            position: relative;
+            line-height: 1.65;
+        }
+
+        .legal-content ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .legal-content a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--gold);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links a.active {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        @media (min-width: 900px) {
+            nav {
+                padding: 1rem 3rem;
+            }
+
+            .page-header {
+                padding: 8rem 3rem 3rem;
+            }
+
+            .legal-content {
+                padding: 3rem 3rem 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" fill="#D4A84B"/>
+            <circle cx="12" cy="14" r="3" fill="#0A0A0B"/>
+            <circle cx="20" cy="14" r="3" fill="#0A0A0B"/>
+            <circle cx="12" cy="13.5" r="1.5" fill="#FAFAFA"/>
+            <circle cx="20" cy="13.5" r="1.5" fill="#FAFAFA"/>
+            <path d="M16 10L13 6h6l-3 4z" fill="#0A0A0B"/>
+            <path d="M14 19h4l-2 3-2-3z" fill="#0A0A0B"/>
+            <path d="M8 12c-2-1-3-3-2-5" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 12c2-1 3-3 2-5" stroke="#0A0A0B" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>curo</span>
+    </a>
+    <a href="index.html#waitlist" class="nav-cta">Join Waitlist</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">
+        <strong>Bamboo Futures Ltd</strong> &middot; Last updated: 29 April 2026 &middot; Effective: 29 April 2026
+    </p>
+</div>
+
+<!-- LEGAL CONTENT -->
+<div class="legal-content">
+
+    <div class="info-box">
+        <p>This Privacy Policy explains how <strong>Bamboo Futures Ltd</strong> ("we", "us", "our") collects, uses, and protects your personal data when you use the Curo application and website. Please read it carefully. By using Curo, you confirm that you have read and understood this policy.</p>
+    </div>
+
+    <h2>1. Who We Are</h2>
+    <p>Bamboo Futures Ltd is the data controller responsible for your personal data. We are a company registered in England and Wales and registered with the Information Commissioner's Office (ICO).</p>
+    <p><strong>Contact details:</strong><br>
+    Bamboo Futures Ltd<br>
+    Email: <a href="mailto:hello@bamboofutures.co.uk">hello@bamboofutures.co.uk</a></p>
+    <p>If you have any questions about how we handle your data or wish to exercise any of your rights, please contact us at the address above.</p>
+
+    <h2>2. What Data We Collect</h2>
+
+    <h3>2.1 Account data</h3>
+    <p>When you create a Curo account we collect:</p>
+    <ul>
+        <li>Your email address (used for authentication and service communications)</li>
+        <li>A hashed password (we never store your password in plain text)</li>
+        <li>The date and time of account creation</li>
+    </ul>
+
+    <h3>2.2 Open Banking / financial data</h3>
+    <p>With your explicit consent, Curo connects to your bank accounts via FCA-regulated Open Banking providers. We collect and process:</p>
+    <ul>
+        <li>Bank account metadata (account name, account number last four digits, sort code, account type, institution name)</li>
+        <li>Transaction data (amount, merchant name, date, category, transaction description, balance)</li>
+    </ul>
+    <p>This access is strictly <strong>read-only</strong>. Curo cannot initiate payments, move money, or make any changes to your bank accounts whatsoever.</p>
+
+    <h3>2.3 Usage analytics</h3>
+    <p>We collect anonymised usage data to understand how the app is used and to improve the service. This includes:</p>
+    <ul>
+        <li>Features accessed and frequency of use</li>
+        <li>App version and operating system version</li>
+        <li>Crash reports and error logs</li>
+        <li>Session duration and navigation patterns</li>
+    </ul>
+    <p>We do not use third-party advertising analytics. All analytics data is processed in aggregate and is not linked to your identity.</p>
+
+    <h3>2.4 Data we do NOT collect</h3>
+    <p>We do not collect:</p>
+    <ul>
+        <li>Your full bank account number or sort code</li>
+        <li>Your banking passwords or login credentials</li>
+        <li>Your payment card details</li>
+        <li>Location data</li>
+        <li>Any biometric data</li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>We use your personal data for the following purposes:</p>
+    <ul>
+        <li><strong>To provide the Curo service</strong> — powering your Morning Briefings, bill tracking, anomaly detection, and natural language queries</li>
+        <li><strong>To manage your account</strong> — authentication, account recovery, and service notifications</li>
+        <li><strong>To improve Curo</strong> — using aggregated analytics to understand usage patterns and prioritise product development</li>
+        <li><strong>To comply with legal obligations</strong> — where we are required to retain or disclose data by law</li>
+        <li><strong>To communicate with you</strong> — responding to support requests and, where you have consented, sending product updates</li>
+    </ul>
+
+    <h2>4. Legal Basis for Processing</h2>
+    <p>Under UK GDPR, we rely on the following legal bases:</p>
+    <ul>
+        <li><strong>Contract performance (Article 6(1)(b))</strong> — processing necessary to deliver the Curo service you have subscribed to, including all financial data analysis</li>
+        <li><strong>Legitimate interests (Article 6(1)(f))</strong> — processing for the purposes of improving the service, preventing fraud, and maintaining security. We have carried out a Legitimate Interests Assessment and are satisfied these interests are not overridden by your rights</li>
+        <li><strong>Consent (Article 6(1)(a))</strong> — where we send you optional marketing or product update communications. You may withdraw consent at any time</li>
+        <li><strong>Legal obligation (Article 6(1)(c))</strong> — where we are required to process your data by applicable law</li>
+    </ul>
+
+    <h2>5. Open Banking and Third-Party Providers</h2>
+    <p>To connect your bank accounts, Curo integrates with FCA-regulated Account Information Service Providers (AISPs). These providers establish a secure, consented connection to your bank on your behalf under the Payment Services Regulations 2017 and Open Banking standards.</p>
+    <p>Key points about Open Banking access:</p>
+    <ul>
+        <li>You explicitly authorise each bank connection in the Curo app</li>
+        <li>Access is read-only at all times — we can never move or modify your money</li>
+        <li>Bank connections can be revoked by you at any time, within Curo or directly with your bank</li>
+        <li>Our Open Banking providers are authorised by the Financial Conduct Authority (FCA) and operate under strict data protection obligations</li>
+        <li>Connections expire and must be re-authorised periodically (typically every 90 days) in accordance with Open Banking regulations</li>
+    </ul>
+
+    <h2>6. How We Protect Your Data</h2>
+    <p>We take data security seriously and implement appropriate technical and organisational measures, including:</p>
+    <ul>
+        <li><strong>Encryption in transit</strong> — all data transmitted between your device and our servers is encrypted using TLS 1.2 or higher</li>
+        <li><strong>Encryption at rest</strong> — all financial data stored on our servers is encrypted at rest using AES-256</li>
+        <li><strong>Access controls</strong> — strict role-based access controls ensure only authorised personnel can access personal data, and only for legitimate operational purposes</li>
+        <li><strong>Minimal data retention</strong> — we only retain data for as long as necessary (see Section 7)</li>
+        <li><strong>Regular security reviews</strong> — we conduct periodic security assessments of our infrastructure and practices</li>
+    </ul>
+
+    <h2>7. How Long We Keep Your Data</h2>
+    <ul>
+        <li><strong>Transaction data</strong> — retained for 24 months from the transaction date, then automatically and permanently deleted</li>
+        <li><strong>Account data</strong> — retained for the duration of your account and deleted within 30 days of account cancellation or deletion</li>
+        <li><strong>Analytics data</strong> — retained in anonymised, aggregated form indefinitely; no individual records are retained beyond 12 months</li>
+        <li><strong>Support correspondence</strong> — retained for 2 years after the matter is resolved, then deleted</li>
+        <li><strong>Legal hold</strong> — where we are required by law to retain data for longer, we will do so only for the required period</li>
+    </ul>
+
+    <h2>8. Who We Share Your Data With</h2>
+    <p>We do not sell your data. We do not share your data with advertisers. Ever.</p>
+    <p>We may share your data only in the following limited circumstances:</p>
+    <ul>
+        <li><strong>Open Banking providers</strong> — our FCA-regulated AISP partners, solely for the purpose of establishing bank connections</li>
+        <li><strong>Cloud infrastructure providers</strong> — we use reputable cloud service providers to host our infrastructure. These providers act as data processors under contracts that include appropriate data protection clauses</li>
+        <li><strong>Legal requirements</strong> — where we are legally compelled to disclose data, for example under a court order or to comply with a legal obligation. We will notify you of any such disclosure where legally permitted to do so</li>
+        <li><strong>Business transfers</strong> — in the event of a merger, acquisition, or sale of all or substantially all of our business, your data may be transferred to the acquirer. We will notify you in advance and you will have the right to delete your account before any such transfer</li>
+    </ul>
+
+    <h2>9. International Data Transfers</h2>
+    <p>We store and process your data within the United Kingdom and the European Economic Area (EEA). Where any data is transferred outside the UK or EEA (for example, to cloud infrastructure in other regions), we ensure appropriate safeguards are in place in accordance with UK GDPR Chapter V, such as Standard Contractual Clauses or equivalent mechanisms.</p>
+
+    <h2>10. Your Rights Under UK GDPR</h2>
+    <p>You have the following rights regarding your personal data:</p>
+    <ul>
+        <li><strong>Right of access (Article 15)</strong> — you may request a copy of the personal data we hold about you</li>
+        <li><strong>Right to rectification (Article 16)</strong> — you may request that we correct inaccurate or incomplete data</li>
+        <li><strong>Right to erasure (Article 17)</strong> — you may request that we delete your personal data ("right to be forgotten"), subject to our legal obligations</li>
+        <li><strong>Right to portability (Article 20)</strong> — you may request your data in a structured, machine-readable format</li>
+        <li><strong>Right to restriction (Article 18)</strong> — you may request that we restrict processing of your data in certain circumstances</li>
+        <li><strong>Right to object (Article 21)</strong> — you may object to processing based on legitimate interests</li>
+        <li><strong>Right to withdraw consent</strong> — where processing is based on consent, you may withdraw consent at any time without affecting the lawfulness of prior processing</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us at <a href="mailto:hello@bamboofutures.co.uk">hello@bamboofutures.co.uk</a>. We will respond within one calendar month. We may ask you to verify your identity before processing your request.</p>
+    <p>You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or by calling 0303 123 1113.</p>
+
+    <h2>11. Cookies</h2>
+    <p>The Curo website uses a minimal number of cookies:</p>
+    <ul>
+        <li><strong>Strictly necessary cookies</strong> — required for the website to function. No consent is required for these</li>
+        <li><strong>Analytics cookies</strong> — we may use privacy-respecting analytics to understand website usage. These do not track you across other websites</li>
+    </ul>
+    <p>The Curo iOS app does not use cookies.</p>
+
+    <h2>12. Children's Privacy</h2>
+    <p>Curo is intended for use by UK residents aged 18 and over. We do not knowingly collect personal data from anyone under the age of 18. If you believe a child has provided us with personal data, please contact us immediately and we will delete it.</p>
+
+    <h2>13. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Where we make material changes, we will notify you via the app or by email at least 14 days before the changes take effect. The "Last updated" date at the top of this page will always reflect the most recent version. Your continued use of Curo after changes take effect constitutes acceptance of the updated policy.</p>
+
+    <h2>14. Governing Law</h2>
+    <p>This Privacy Policy is governed by the laws of England and Wales. Any disputes arising in connection with this policy shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+    <h2>15. Contact Us</h2>
+    <p>For any privacy-related queries, to exercise your rights, or to raise a concern, please contact us:</p>
+    <p>
+        <strong>Bamboo Futures Ltd</strong><br>
+        Email: <a href="mailto:hello@bamboofutures.co.uk">hello@bamboofutures.co.uk</a>
+    </p>
+    <p>We aim to respond to all privacy enquiries within 5 working days.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="privacy.html" class="active">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:hello@bamboofutures.co.uk">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 Bamboo Futures Ltd · London, UK</p>
+    </div>
+</footer>
+
+</body>
+</html>
